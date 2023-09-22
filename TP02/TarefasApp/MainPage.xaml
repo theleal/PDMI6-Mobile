@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.MainPage">
+    
+    <!--//Luiz Gustavo Leal Cortez - CB3015386 
+        //Rodrigo Rebelo - CB3016871-->
+
+    <StackLayout>
+        <Label Text="Tarefas" 
+               HorizontalOptions="CenterAndExpand" 
+               FontSize="Large"/>
+
+        <Button Text="Adicionar Tarefa" Clicked="OnAddTarefaClicked" HorizontalOptions="Center"/>
+
+        <CollectionView x:Name="TarefasListView" SelectionChanged="OnTarefaSelected" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label Text="{Binding Titulo}" 
+                       FontAttributes="Bold"/>
+                        <Label Text="{Binding Descricao}" 
+                       FontAttributes="Italic"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
