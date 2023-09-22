@@ -17,14 +17,12 @@ namespace TarefasApp
         {
             InitializeComponent();
 
-            // Populando a lista de tarefas como exemplo
             Tarefas = new ObservableCollection<Tarefa>
             {
-                new Tarefa { Id = 1, Titulo = "Tarefa 1", Descricao = "Descrição da tarefa 1" },
-                new Tarefa { Id = 2, Titulo = "Tarefa 2", Descricao = "Descrição da tarefa 2" }
+                new Tarefa { Id = 1, Titulo = "Tarefa 1", Descricao = "Descrição da tarefa 1", DataCriacao = DateTime.Now, Prioridade = Prioridade.Baixa },
+                new Tarefa { Id = 2, Titulo = "Tarefa 2", Descricao = "Descrição da tarefa 2", DataCriacao = DateTime.Now, Prioridade = Prioridade.Media }
             };
 
-            // Vinculando a lista à CollectionView
             TarefasListView.ItemsSource = Tarefas;
 
             TarefasListView.ItemsSource = null;
@@ -35,6 +33,12 @@ namespace TarefasApp
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            MessagingCenter.Subscribe<AdicionarTarefaPage, Tarefa>(this, "AdicionarTarefa", (sender, novaTarefa) =>
+            {
+                // Adicione a novaTarefa à sua ObservableCollection
+                Tarefas.Add(novaTarefa);
+            });
 
 
             MessagingCenter.Subscribe<EditarTarefaPage, Tarefa>(this, "ExcluirTarefa", (sender, tarefaExcluida) =>
@@ -60,24 +64,7 @@ namespace TarefasApp
 
         async void OnAddTarefaClicked(object sender, EventArgs e)
         {
-            string titulo = await DisplayPromptAsync("Nova Tarefa", "Informe o título da tarefa:");
-
-            if (string.IsNullOrEmpty(titulo))
-            {
-                await DisplayAlert("Erro", "O título é obrigatório!", "OK");
-                return;
-            }
-
-            string descricao = await DisplayPromptAsync("Nova Tarefa", "Informe a descrição da tarefa:");
-
-            var novaTarefa = new Tarefa
-            {
-                Id = Tarefas.Count + 1,  // Uma forma simples de gerar um ID. Em um cenário real, você pode querer algo mais robusto.
-                Titulo = titulo,
-                Descricao = descricao
-            };
-
-            Tarefas.Add(novaTarefa);
+            await Navigation.PushModalAsync(new AdicionarTarefaPage());
         }
 
         async void OnTarefaSelected(object sender, SelectionChangedEventArgs e)

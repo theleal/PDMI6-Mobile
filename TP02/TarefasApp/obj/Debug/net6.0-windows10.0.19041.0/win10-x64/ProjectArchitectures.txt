@@ -1,1 +1,1 @@
-C:\Users\Luiz Gustavo\source\repos\PDMI6\TarefasApp\TarefasApp.csproj;x64
+C:\Users\Luiz Gustavo\source\repos\PDMI6\TP02\TarefasApp\TarefasApp.csproj;x64

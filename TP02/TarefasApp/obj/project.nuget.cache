@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CsUkg4TUjKDf1LaHdZdLK5J51habclbl02UZgh4RtXlwAnyBeQDfdD3KdMIshwR8q4QFn4I8hCbQ1CTbW1CbEQ==",
+  "dgSpecHash": "VpJcpT1ON6iU5uOPUm7aun0Qb4Fty5wUm5LMGCUsLbfXsi1nwtbyy6quiCh/aBxvYSoLaKtOHKzzRNRB8U1HnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TarefasApp\\TarefasApp.csproj",
+  "projectFilePath": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TP02\\TarefasApp\\TarefasApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luiz Gustavo\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\Luiz Gustavo\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",

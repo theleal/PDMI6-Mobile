@@ -2,21 +2,65 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TarefasApp.page.EditarTarefaPage"
-             Title="EditarTarefaPage">
-
+             Title="Editar Tarefa"
+             BackgroundColor="#f4f4f4">
 
     <!--//Luiz Gustavo Leal Cortez - CB3015386 
         //Rodrigo Rebelo - CB3016871-->
 
-    <StackLayout Padding="15">
-        <Label Text="Título:"/>
-        <Entry x:Name="TituloEntry" Placeholder="Título da tarefa"/>
+    <StackLayout Padding="20" Spacing="20">
 
-        <Label Text="Descrição:" Margin="0,10,0,0"/>
-        <Editor x:Name="DescricaoEditor" Placeholder="Descrição da tarefa"/>
+        <Label Text="Título:"
+               FontSize="18"
+               TextColor="Black"/>
 
-        <Button Text="Salvar" Clicked="OnSalvarClicked" Margin="0,20,0,0"/>
-        <Button Text="Excluir" Clicked="OnExcluirClicked" Margin="0,10,0,0" TextColor="White" BackgroundColor="Red"/>
+        <Entry x:Name="TituloEntry"
+               Placeholder="Título da tarefa"
+               BackgroundColor="White"
+               HeightRequest="50"
+               TextColor="Black"
+               PlaceholderColor="Gray"/>
+
+        <Label Text="Descrição:"
+               FontSize="18"
+               Margin="0,10,0,0"
+               TextColor="Black"/>
+
+        <Editor x:Name="DescricaoEditor"
+                Placeholder="Descrição da tarefa"
+                BackgroundColor="White"
+                HeightRequest="100"
+                TextColor="Black"
+                PlaceholderColor="Gray"/>
+
+        <!-- Adição da edição de Prioridade -->
+        <Label Text="Prioridade:"
+               FontSize="18"
+               Margin="0,10,0,0"
+               TextColor="Black"/>
+
+        <Picker x:Name="PrioridadePicker"
+        Title="Selecione a prioridade"
+        SelectedItem="{Binding TarefaAtual.Prioridade, Source={x:Reference this}}"
+        BackgroundColor="White"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                MinimumHeightRequest="100"/>
+
+        <Button Text="Salvar"
+                Clicked="OnSalvarClicked"
+                BackgroundColor="#3498db"
+                TextColor="White"
+                Padding="10"
+                CornerRadius="8"/>
+
+        <Button Text="Excluir"
+                Clicked="OnExcluirClicked"
+                BackgroundColor="#e74c3c"
+                TextColor="White"
+                Padding="10"
+                Margin="0,10,0,0"
+                CornerRadius="8"/>
     </StackLayout>
 
 </ContentPage>

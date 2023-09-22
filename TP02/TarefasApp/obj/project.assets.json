@@ -24639,11 +24639,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TarefasApp\\TarefasApp.csproj",
+      "projectUniqueName": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TP02\\TarefasApp\\TarefasApp.csproj",
       "projectName": "TarefasApp",
-      "projectPath": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TarefasApp\\TarefasApp.csproj",
+      "projectPath": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TP02\\TarefasApp\\TarefasApp.csproj",
       "packagesPath": "C:\\Users\\Luiz Gustavo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TarefasApp\\obj\\",
+      "outputPath": "C:\\Users\\Luiz Gustavo\\source\\repos\\PDMI6\\TP02\\TarefasApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

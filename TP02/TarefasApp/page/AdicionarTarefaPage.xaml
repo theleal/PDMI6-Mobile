@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.page.AdicionarTarefaPage"
+             Title="Adicionar Tarefa"
+             BackgroundColor="#f4f4f4">
+
+    <!--//Luiz Gustavo Leal Cortez - CB3015386 
+        //Rodrigo Rebelo - CB3016871-->
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <Entry x:Name="TituloEntry" 
+               Placeholder="Título"
+               BackgroundColor="White"
+               PlaceholderColor="#888"
+               TextColor="Black"
+               FontSize="Large"
+               HeightRequest="50"
+               Margin="0,10,0,10" />
+
+        <Editor x:Name="DescricaoEditor" 
+                Placeholder="Descrição"
+                BackgroundColor="White"
+                PlaceholderColor="#888"
+                TextColor="Black"
+                FontSize="Medium" 
+                AutoSize="TextChanges"
+                HeightRequest="100"
+                Margin="0,10,0,10" />
+
+        <Picker x:Name="PrioridadePicker" 
+                Title="Selecione a Prioridade"
+                BackgroundColor="White"
+                TitleColor="#888"
+                HeightRequest="50"
+                TextColor="Black"
+                MinimumHeightRequest="100">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baixa</x:String>
+                    <x:String>Média</x:String>
+                    <x:String>Alta</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Salvar" 
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="Large"
+                Clicked="OnSalvarClicked" 
+                Margin="0,20,0,10" />
+
+        <Button Text="Cancelar"
+                BackgroundColor="#FF5252"
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="Large"
+                Clicked="OnCancelarClicked" />
+
+    </StackLayout>
+
+</ContentPage>

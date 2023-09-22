@@ -19,12 +19,17 @@ public partial class EditarTarefaPage : ContentPage
         // Preenche as labels com as informações da tarefa
         TituloEntry.Text = TarefaAtual.Titulo;
         DescricaoEditor.Text = TarefaAtual.Descricao;
+        List<Prioridade> prioridade = new List<Prioridade>{ Prioridade.Baixa, Prioridade.Media, Prioridade.Alta };
+        PrioridadePicker.ItemsSource = prioridade;
+        PrioridadePicker.SelectedItem = TarefaAtual.Prioridade;
+
     }
 
     async void OnSalvarClicked(object sender, EventArgs e)
     {
         TarefaAtual.Titulo = TituloEntry.Text;
         TarefaAtual.Descricao = DescricaoEditor.Text;
+        TarefaAtual.Prioridade = (Prioridade)PrioridadePicker.SelectedItem;  // Adicionado para salvar a prioridade
         MessagingCenter.Send(this, "AtualizarTarefa", TarefaAtual);
         await Navigation.PopAsync(); // Retorna à página anterior
     }
