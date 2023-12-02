@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP03Mobile.ResultadoBusca">
+
+    <StackLayout Padding="20" BackgroundColor="#F5F5F5">
+        <Label Text="Detalhes da Entrega" FontSize="24" FontAttributes="Bold" TextColor="#333333" HorizontalOptions="StartAndExpand" Margin="0,0,0,20" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Número do Pacote:" FontSize="20" FontAttributes="Bold" TextColor="#007BFF" Margin="0,0,5,10" />
+            <Label Text="{Binding Pacote.PacoteId}" FontAttributes="Bold" TextColor="#333333"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Status:" FontSize="16" TextColor="#333333" Margin="0,0,5,5" />
+            <Label Text="{Binding Pacote.Status}" FontAttributes="Bold" TextColor="#333333"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Data de Envio:" FontSize="16" TextColor="#333333" Margin="0,0,5,5" />
+            <Label Text="{Binding Pacote.DataEnvio}" FontAttributes="Bold" TextColor="#333333"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Data Prevista de Entrega:" FontSize="16" TextColor="#333333" Margin="0,0,5,5" />
+            <Label Text="{Binding Pacote.DataPrevistaEntrega}" FontAttributes="Bold" TextColor="#333333"/>
+        </StackLayout>
+
+        <StackLayout Padding="20" BackgroundColor="#F5F5F5">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Histórico de Eventos:" FontSize="16" TextColor="#333333" Margin="0,0,5,5" />
+            </StackLayout>
+
+            <ListView ItemsSource="{Binding Pacote.HistoricoEventos}" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding}" FontAttributes="Bold" TextColor="#333333"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+
+        <StackLayout Orientation="Vertical">
+            <Label Text="Autores" FontSize="20" FontAttributes="Bold" TextColor="#007BFF" Margin="0,0,5,10" />
+            <Label Text="Luiz Gustavo Leal Cortez" FontAttributes="Bold" TextColor="#007BFF"/>
+            <Label Text="Rodrigo Rebelo da Costa" FontAttributes="Bold" TextColor="#007BFF"/>
+        </StackLayout>
+
+        <Button Text="Buscar por Outro Pacote" Clicked="OnBuscarNovoPacoteClick" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" Margin="0,20,0,0" />
+    </StackLayout>
+
+</ContentPage>

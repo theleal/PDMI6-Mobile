@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP03Mobile.MainPage">
+
+    <StackLayout Padding="20" BackgroundColor="#F5F5F5">
+        <Label Text="Rastreamento de Pacotes" FontSize="24" FontAttributes="Bold" TextColor="#333333" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" />
+
+        <Entry x:Name="NumeroEntrega" Placeholder="Digite o Número de Entrega" FontSize="18" TextColor="Black" BackgroundColor="#FFFFFF" Margin="0,0,0,20" />
+
+        <Button Text="Buscar Pacote" Clicked="OnButtonClick" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" />
+
+        <Label Text="Exemplo: ABC123456789" FontSize="14" TextColor="#555555" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" />
+    </StackLayout>
+
+</ContentPage>
